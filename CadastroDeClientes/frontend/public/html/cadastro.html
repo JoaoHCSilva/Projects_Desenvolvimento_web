@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Cadastro de Clientes</title>
+  </head>
+  <body style="font-family: Montserrat, sans-serif">
+    <header class="flex justify-between bg-blue-300 px-4 py-2">
+      <div>
+        <h1 class="text-xl">Banco de clientes</h1>
+      </div>
+
+      <div>
+        <div>Olá, João!</div>
+      </div>
+    </header>
+    <main>
+      <!-- side bar: -->
+      <div
+        id="navBar"
+        class="h-screen w-60 fixed bg-slate-100 overflow-x-hidden pt-5 left-0"
+      >
+        <a
+          class="transition-[background-color] duration-300 hover:bg-slate-200 px-4 py-5 no-underline text-xl text-gray-700 block"
+          href="#Home"
+        >
+          <i class="fa-solid fa-house mr-1"></i>
+          Home</a
+        >
+        <a
+          class="bg-slate-300 px-4 py-5 no-underline text-xl text-gray-700 block"
+          href="#Clientes"
+          ><i class="fa-solid fa-circle-user mr-1"></i>Clientes</a
+        >
+        <a
+          class="transition-[background-color] duration-300 hover:bg-slate-200 px-4 py-5 no-underline text-xl text-gray-700 block"
+          href="./painel.html"
+          ><i class="fa-solid fa-chart-simple mr-1"></i>Painel</a
+        >
+      </div>
+      <!-- pincipal -->
+      <div id="principal" class="ml-64 p-5 w-4/5 h-full flex flex-col gap-4">
+        <div class="text-center text-2xl">Cadastro de clientes</div>
+        <div class="border border-slate-400 p-4 rounded-md">
+          <form id="formulario" class="grid grid-cols-3 gap-4">
+            <div>
+              <label for="primeiroNome">Primeiro nome:</label>
+              <input
+                type="text"
+                name="primeiroNome"
+                id="inPrimeiroNome"
+                required
+                class="border border-slate-400 outline-none rounded-md"
+              />
+            </div>
+            <div>
+              <label for="segundoNome">Segundo nome:</label>
+              <input
+                type="text"
+                name="segundoNome"
+                id="inSegundoNome"
+                required
+                class="border border-slate-400 outline-none rounded-md"
+              />
+            </div>
+            <div>
+              <label for="nascimento">Data de nascimento:</label>
+              <input type="date" name="nascimento" id="inNascimento" required />
+            </div>
+            <div>
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                id="inEmail"
+                required
+                class="border border-slate-400 outline-none rounded-md"
+              />
+            </div>
+            <div>
+              <label for="sexo">Sexo</label>
+              <select name="sexo" id="inSexo">
+                <option value="Selecione um valor">Selecione um valor</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="naoDeclarado">Não declarado</option>
+              </select>
+            </div>
+          </form>
+          <div class="flex flex-row-reverse gap-5 pr-4">
+            <div>
+              <button
+                id="limparDados"
+                type="reset"
+                class="bg-orange-500 p-1 rounded-md text-slate-100"
+              >
+                Limpar dados
+              </button>
+            </div>
+            <div>
+              <button
+                type="submit"
+                class="bg-green-500 p-1 rounded-md text-slate-100"
+              >
+                Enviar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

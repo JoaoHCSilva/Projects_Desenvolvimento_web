@@ -1,0 +1,124 @@
+<header class="flex justify-between bg-blue-300 px-4 py-2 w-full h-12">
+  <div>
+    <h1 class="text-xl">Banco de clientes</h1>
+  </div>
+
+  <div>
+    <div>Olá, João!</div>
+  </div>
+</header>
+<!-- side bar: -->
+<div id="navBar" class="flex flex-1">
+  <nav class="w-60 bg-slate-100 pt-5">
+    <a
+      class="transition-[background-color] duration-300 hover:bg-slate-200 px-4 py-5 no-underline text-xl text-gray-700 block"
+      href="/"
+    >
+      <i class="fa-solid fa-house mr-1"></i>
+      Home</a>
+    <a
+      class="transition-[background-color] duration-300 hover:bg-slate-200 px-4 py-5 no-underline text-xl text-gray-700 block"
+      href="/add"
+    ><i class="fa-solid fa-circle-user mr-1"></i>Clientes</a>
+    <a
+      class="bg-slate-300 px-4 py-5 no-underline text-xl text-gray-700 block"
+      href="/painel"
+    ><i class="fa-solid fa-chart-simple mr-1"></i>Painel</a>
+  </nav>
+  <main class="flex-1 p-5">
+    <!-- painel -->
+    <div class="p-5 w-full h-full">
+      <!-- cards -->
+      <div class="text-lg mb-5">Acompanhe seus clientes!</div>
+      <div class="flex gap-10">
+        <div
+          id="infSexoMasculino"
+          class="flex gap-3 h-20 bg-blue-600 rounded-md p-2 text-white text-xl items-center"
+        >
+          <div>Masculino</div>
+          <div><i class="fa-solid fa-person fa-sm"></i></div>
+          <div>{{Masculino}}</div>
+        </div>
+        <div
+          id="infSexoFeminino"
+          class="flex gap-3 h-20 bg-pink-600 rounded-md p-2 text-white text-xl items-center"
+        >
+          <div>Feminino</div>
+          <div><i class="fa-solid fa-person-dress fa-sm"></i></div>
+          <div>{{Feminino}}</div>
+        </div>
+        <div
+          id="infSexoFeminino"
+          class="flex gap-3 h-20 bg-gray-600 rounded-md p-2 text-white text-xl items-center"
+        >
+          <div>Não declarado</div>
+          <div>{{naoDeclarados}}</div>
+        </div>
+        <div
+          id="infSexoFeminino"
+          class="flex gap-3 h-20 bg-gray-600 rounded-md p-2 text-white text-xl items-center"
+        >
+          <div>Total cadastrado</div>
+          <div><i class="fa-solid fa-users"></i></div>
+          <div>{{totalClientes}}</div>
+        </div>
+      </div>
+      <div class="mt-10 h-2/4 flex flex-col justify-center gap-2">
+      <div class="mt-14"> 
+        <form method="get" action="/painel" class="flex gap-2">
+          <input type="text" name="busca" value="{{busca}}" placeholder="Busque seu cliente!" class="px-3 py-2 border-2 rounded w-full outline-none">
+          <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Filtrar</button>
+          
+        </form>
+      </div>
+      
+        <table>
+          <thead class="bg-blue-200">
+            <th>Nome</th>
+            <th>Segundo Nome</th>
+            <th>Email</th>
+            <th>Genero</th>
+            <th>Data de nascimento</th>
+          </thead>
+          <tbody class="text-center">
+            {{#each dados}}
+              <tr>
+                <td>{{primeiro_nome}}</td>
+                <td>{{segundo_nome}}</td>
+                <td>{{email}}</td>
+                <td>{{id_genero}}</td>
+                <td>{{formatDate data_nascimento}}</td>
+                <td>
+                  <a href="/editar/{{id_cliente}}" class="text-blue-600">Editar</a> |
+                  <form action="/excluir/{{id_cliente}}" method="POST" style="display:inline;">
+                    <button type="submit" class="text-red-600 border-none bg-transparent cursor-pointer">Excluir</button>
+                  </form>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+
+        {{!-- paginação --}}
+        <div class="pagination mt-5 flex gap-2 justify-center">
+          {{!-- pagina anterior --}}
+            {{#if (gt currentPage 1)}}
+                <a href="/painel?page={{subtract currentPage 1}}" class="px-3 py-1 bg-gray-300 rounded">Anterior</a>
+            {{/if}}
+
+            {{!-- Paginas atuais --}}
+            {{#each (range 1 totalPages)}} 
+                <a href="/painel?page={{this}}" class="px-3 py-1 {{#if (eq this ../currentPage)}}bg-blue-500 text-white{{else}}bg-gray-200{{/if}} rounded">
+                {{this}}
+                </a>
+            {{/each}}
+
+            {{!-- Pagina seguinte --}}
+            {{#if (lt currentPage totalPages)}}
+                <a href="/painel?page={{add currentPage 1}}&busca={{busca}}" class="px-3 py-1 bg-gray-300 rounded">Próxima</a>
+            {{/if}}
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

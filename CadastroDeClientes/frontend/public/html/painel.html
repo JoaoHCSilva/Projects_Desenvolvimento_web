@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Cadastro de Clientes</title>
+  </head>
+  <body style="font-family: Montserrat, sans-serif">
+    <header class="flex justify-between bg-blue-300 px-4 py-2">
+      <div>
+        <h1 class="text-xl">Banco de clientes</h1>
+      </div>
+
+      <div>
+        <div>Olá, João!</div>
+      </div>
+    </header>
+    <main>
+      <!-- side bar: -->
+      <div
+        id="navBar"
+        class="h-screen w-60 fixed bg-slate-100 overflow-x-hidden pt-5 left-0"
+      >
+        <a
+          class="transition-[background-color] duration-300 hover:bg-slate-200 px-4 py-5 no-underline text-xl text-gray-700 block"
+          href="#Home"
+        >
+          <i class="fa-solid fa-house mr-1"></i>
+          Home</a
+        >
+        <a
+          class="transition-[background-color] duration-300 hover:bg-slate-200 px-4 py-5 no-underline text-xl text-gray-700 block"
+          href="./cadastro.html"
+          ><i class="fa-solid fa-circle-user mr-1"></i>Clientes</a
+        >
+        <a
+          class="bg-slate-300 px-4 py-5 no-underline text-xl text-gray-700 block"
+          href="./painel.html"
+          ><i class="fa-solid fa-chart-simple mr-1"></i>Painel</a
+        >
+      </div>
+      <!-- painel -->
+      <div class="ml-64 p-5 w-4/5 h-full">
+        <!-- cards -->
+        <div class="text-lg mb-5">Acompanhe seus clientes!</div>
+        <div class="flex gap-10">
+          <div
+            id="infSexoMasculino"
+            class="flex gap-3 h-20 bg-blue-600 rounded-md p-2 text-white text-xl items-center"
+          >
+            <div>Masculino</div>
+            <div><i class="fa-solid fa-person fa-sm"></i></div>
+            <div>10</div>
+          </div>
+          <div
+            id="infSexoFeminino"
+            class="flex gap-3 h-20 bg-pink-600 rounded-md p-2 text-white text-xl items-center"
+          >
+            <div>Feminino</div>
+            <div><i class="fa-solid fa-person-dress fa-sm"></i></div>
+            <div>10</div>
+          </div>
+          <div
+            id="infSexoFeminino"
+            class="flex gap-3 h-20 bg-gray-600 rounded-md p-2 text-white text-xl items-center"
+          >
+            <div>Total cadastrado</div>
+            <div><i class="fa-solid fa-users"></i></div>
+            <div>10</div>
+          </div>
+        </div>
+        <div class="mt-3 border-gray-500 border-2 h-4/5">dados</div>
+      </div>
+    </main>
+  </body>
+</html>

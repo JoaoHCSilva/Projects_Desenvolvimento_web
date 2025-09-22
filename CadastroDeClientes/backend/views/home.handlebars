@@ -1,0 +1,83 @@
+<header class="flex justify-between bg-blue-300 px-4 py-2 w-full h-12">
+  <div>
+    <h1 class="text-xl">Banco de clientes</h1>
+  </div>
+  <div>
+    <div>Olá, João!</div>
+  </div>
+</header>
+<!-- side bar: -->
+<div id="navBar" class="flex flex-1">
+  <nav class="w-60 bg-slate-100 pt-5">
+    <a
+      class="bg-slate-300 px-4 py-5 no-underline text-xl text-gray-700 block"
+      href="/"
+    >
+      <i class="fa-solid fa-house mr-1"></i>
+      Home</a>
+    <a
+      class="transition-[background-color] duration-300 hover:bg-slate-200 px-4 py-5 no-underline text-xl text-gray-700 block"
+      href="/add"
+    ><i class="fa-solid fa-circle-user mr-1"></i>Clientes</a>
+    <a
+      class="transition-[background-color] duration-300 hover:bg-slate-200 px-4 py-5 no-underline text-xl text-gray-700 block"
+      href="/painel"
+    ><i class="fa-solid fa-chart-simple mr-1"></i>Painel</a>
+  </nav>
+  <main class="flex-1 p-5">
+    <!-- pincipal -->
+    <div id="principal" class="p-5 w-full h-full flex flex-col gap-4">
+      <div class="text-center text-2xl">Cadastro de clientes - info</div>
+      <div class="p-4 flex gap-12 justify-center">
+        <div class="w-1/4">
+          <dl>
+            <dt class="pb-4 text-xl">Objetivos</dt>
+            <dd class="text-justify">Desenvolver uma aplicação web, para
+              cadastro de clientes em um banco de dados local. O exercicio tem
+              como intuito principal, praticar a programação orientada a
+              objetos, modularização, backend e front-end.
+            </dd>
+          </dl>
+        </div>
+        <div>
+          <dl class="w-3/4">
+            <dt class="pb-4 text-xl">Ferramentas utilizadas</dt>
+            <dd>
+              <dt class="text-blue-800 text-xl mb-2">Front-end</dt>
+              <dd class="list-none">
+                <li
+                  class="bg-blue-400 rounded p-1 mb-2 hover:-translate-y-1 transition-[transform] duration-300 drop-shadow-md"
+                >Handlebars - Estrutura html</li>
+                <li
+                  class="bg-blue-300 rounded p-1 mb-2 hover:-translate-y-1 transition-[transform] duration-300 drop-shadow-md"
+                >Tailwind CSS - Estilos personalizados</li>
+              </dd>
+              <dt class="text-blue-800 text-xl mb-2">Backend</dt>
+              <dd class="list-none">
+                <li
+                  class="bg-blue-400 rounded p-1 mb-2 hover:-translate-y-1 transition-[transform] duration-300 drop-shadow-md"
+                >Express - Criação do servidor, rotas e manipulação do banco de
+                  dados</li>
+                <li
+                  class="bg-blue-300 rounded p-1 mb-2 hover:-translate-y-1 transition-[transform] duration-300 drop-shadow-md"
+                >Express-handlebars - Conexao direta com os dados do front-end,
+                  possibilitando uma melhor manipulação</li>
+                <li
+                  class="bg-blue-400 rounded p-1 mb-2 hover:-translate-y-1 transition-[transform] duration-300 drop-shadow-md"
+                >Mysql2 - conexao com o banco de dados local</li>
+                <li
+                  class="bg-blue-300 rounded p-1 mb-2 hover:-translate-y-1 transition-[transform] duration-300 drop-shadow-md"
+                >Sequelize - ORM que proporcionou uma melhor manipulação do
+                  banco de dados</li>
+                <li
+                  class="bg-blue-400 rounded p-1 mb-2 hover:-translate-y-1 transition-[transform] duration-300 drop-shadow-md"
+                >Body-parser - Resposável por interpretar os dados enviados via
+                  formulario HTML</li>
+              </dd>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

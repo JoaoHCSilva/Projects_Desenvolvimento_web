@@ -1,0 +1,97 @@
+<header class="flex justify-between bg-blue-300 px-4 py-2 w-full h-12">
+  <div>
+    <h1 class="text-xl">Banco de clientes</h1>
+  </div>
+
+  <div>
+    <div>Olá, João!</div>
+  </div>
+</header>
+<!-- side bar: -->
+<div id="navBar" class="flex flex-1">
+  <nav class="w-60 bg-slate-100 pt-5">
+    <a
+      class="transition-[background-color] duration-300 hover:bg-slate-200 px-4 py-5 no-underline text-xl text-gray-700 block"
+      href="/"
+    >
+      <i class="fa-solid fa-house mr-1"></i>
+      Home</a>
+    <a
+      class="bg-slate-300 px-4 py-5 no-underline text-xl text-gray-700 block"
+      href="/add"
+    ><i class="fa-solid fa-circle-user mr-1"></i>Clientes</a>
+    <a
+      class="transition-[background-color] duration-300 hover:bg-slate-200 px-4 py-5 no-underline text-xl text-gray-700 block"
+      href="/painel"
+    ><i class="fa-solid fa-chart-simple mr-1"></i>Painel</a>
+  </nav>
+  <main class="flex-1 p-5">
+    <!-- pincipal -->
+    <div id="principal" class="p-5 w-full h-full flex flex-col gap-4">
+      <div class="text-center text-2xl">Cadastro de clientes</div>
+      <div class="border border-slate-400 p-4 rounded-md">
+        <form
+          id="formulario"
+          action="/atualizar/{{cliente.id_cliente}}"
+          method="post"
+          class="grid grid-cols-3 gap-4"
+        >
+          <div>
+            <label for="primeiroNome">Primeiro nome:</label>
+            <input
+              type="text"
+              name="primeiroNome"
+              value="{{cliente.primeiro_nome}}"
+              required
+              class="border border-slate-400 outline-none rounded-md"
+            />
+          </div>
+          <div>
+            <label for="segundoNome">Segundo nome:</label>
+            <input
+              type="text"
+              name="segundoNome"
+              id="inSegundoNome"
+              value="{{cliente.segundo_nome}}"
+              required
+              class="border border-slate-400 outline-none rounded-md"
+            />
+          </div>
+          <div>
+            <label for="nascimento">Data de nascimento:</label>
+            <input type="date" name="nascimento" id="inNascimento" value="{{cliente.data_nascimento}}"required />
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              name="email"
+              id="inEmail"
+              value="{{cliente.email}}"
+              required
+              class="border border-slate-400 outline-none rounded-md"
+            />
+          </div>
+          <div>
+            <label for="sexo">Sexo</label>
+            <select name="sexo" id="inSexo" required >
+              <option value="Feminino" {{#if (eq cliente.id_genero "Feminio")}}selected{{/if}}>Feminino</option>
+              <option value="Masculino" {{#if (eq cliente.id_genero "Masculino")}}selected{{/if}}>Masculino</option>
+              <option value="naoDeclarado" {{#if (eq cliente.id_genero "Não declarado")}}selected{{/if}}>Não declarado</option>
+            </select>
+          </div>
+        <div class="flex flex-row-reverse gap-5 pr-4">
+          <div>
+            <button
+              type="submit"
+              class="bg-green-500 p-1 rounded-md text-slate-100"
+            >
+              Confirmar
+            </button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
