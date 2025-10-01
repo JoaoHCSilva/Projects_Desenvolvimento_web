@@ -1,0 +1,215 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+:root {
+  --cor1--color: #e0c097;
+  --cor2--color: #b85c38;
+  --cor3--color: #5c3d2e;
+  --cor4--color: #2d2424;
+  --branco--color: white;
+  --preto--color: black;
+}
+
+/* --- Cabeçalho --- */
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--cor3--color);
+  color: var(--branco--color);
+  flex-wrap: wrap; /* Permite que o menu quebre a linha em telas muito pequenas */
+  gap: 1rem;
+}
+
+.navBar ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.listaNav a {
+  text-decoration: none;
+  color: var(--branco--color);
+  padding: 0.5rem;
+}
+
+.listaNav li a:hover {
+  transition: background-color 0.5s;
+  color: var(--preto--color);
+  background-color: wheat;
+  border-radius: 4px;
+}
+
+/* --- Seção Principal --- */
+.projecao {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--cor4--color);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Colunas mais flexíveis */
+  gap: 2rem;
+  background-color: var(--cor1--color);
+  width: 100%;
+  max-width: 1400px; /* Limita a largura máxima em telas muito grandes */
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* --- Formulário --- */
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinha o form no topo */
+}
+
+form {
+  background-color: var(--branco--color);
+  padding: 2rem;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 500px; /* Limita a largura do form */
+}
+
+#dropDown,
+#anos {
+  margin-bottom: 1rem;
+}
+
+#inAnimal {
+  border: none;
+  text-transform: capitalize;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#anos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+button[type="submit"] {
+  background-color: var(--cor2--color);
+  color: var(--branco--color);
+  padding: 10px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  transition: background-color 0.3s;
+  background-color: var(--cor3--color);
+}
+
+/* --- Saída de Dados --- */
+.saida {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+  gap: 1.5rem;
+  align-content: start;
+}
+
+dt {
+  text-align: center;
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+
+dl {
+  background-color: var(--cor2--color);
+  border-radius: 10px;
+  padding: 1rem 0.5rem;
+  color: var(--branco--color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+dd {
+  text-align: center;
+}
+
+.precoGado {
+  color: var(--cor4--color);
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* ================================================= */
+/* MEDIA QUERIES PARA RESPONSIVIDADE        */
+/* ================================================= */
+
+/* Para Tablets e Telas Menores (até 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    /* Diminui o gap entre as colunas */
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  form {
+    padding: 1.5rem;
+  }
+}
+
+/* Para Celulares (até 768px) */
+@media (max-width: 768px) {
+  header {
+    /* Empilha o título e a navegação */
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .projecao {
+    padding: 1rem;
+  }
+
+  .container {
+    /* Transforma o layout para uma única coluna */
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .formulario {
+    /* Garante que o alinhamento funcione bem na coluna única */
+    align-items: center;
+  }
+
+  .saida {
+    /* Garante que o grid de cards tenha um tamanho mínimo razoável */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  dl {
+    font-size: 14px;
+  }
+}

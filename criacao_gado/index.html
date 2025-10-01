@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Criação de Gado</title>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <div class="title">
+        <h1>Crescimento gado</h1>
+      </div>
+      <nav class="navBar">
+        <ul class="listaNav">
+          <li class="rota">
+            <a href="#home">Home</a>
+          </li>
+          <li class="rota">
+            <a href="#home">Projeção</a>
+          </li>
+          <li class="rota">
+            <a href="#home">Sobre</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Projeção -->
+    <section class="projecao">
+      <div class="container">
+        <div class="formulario">
+          <form>
+            <div id="dropDown">
+              <label for="animal">Selecione um tipo de animal</label>
+              <select name="animal" id="inAnimal"></select>
+            </div>
+            <div id="anos">
+              <label for="anos">Anos</label>
+              <input
+                type="number"
+                name="anos"
+                id="inAnos"
+                min="1"
+                step="1"
+                required
+              />
+            </div>
+            <button type="submit">Calcular</button>
+          </form>
+        </div>
+        <div class="saida"></div>
+      </div>
+    </section>
+  </body>
+</html>
