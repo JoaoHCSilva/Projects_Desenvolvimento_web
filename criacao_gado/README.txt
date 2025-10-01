@@ -25,7 +25,7 @@ Recursos: CSS Variables, Media Queries, JavaScript Modules
 Clone o repositório:
 
 bash
-git clone https://github.com/seu-usuario/simulador-pecuaria.git
+git clone https://github.com/JoaoHCSilva/Projects_Desenvolvimento_web/edit/main/criacao_gado.git
 Acesse o diretório:
 
 bash
