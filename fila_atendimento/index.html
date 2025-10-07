@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width='device-width', initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="scrpit.js" defer></script>
+    <title>Estacionamento do João</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header-title">Estacionamento do João 🏎️</h1>
+      <nav>
+        <a href="#home" title="Página Inicial">Home</a>
+        <a href="#cadastro" title="Carros estacionados">Controle</a>
+      </nav>
+      <div class="header-logout">
+        <img
+          src="https://drive.google.com/thumbnail?id=1VfJA6oLz4t3iPm6uN2lM52HIK1jvC0Ej"
+          alt="foto_user"
+        />
+        <a href="#sair" title="Sair">Logout</a>
+      </div>
+    </header>
+    <section class="section">
+      <div class="formulario">
+        <div class="form-title">
+          <h2>Entrada de veículos</h2>
+        </div>
+        <form>
+          <div class="form nome">
+            <label for="nome">Cliente</label>
+            <input type="text" name="nome" id="inNome" required />
+          </div>
+          <div class="form telefone">
+            <label for="tel">Telefone</label>
+            <input type="tel" name="tel" id="inTel" />
+          </div>
+          <div class="form placa">
+            <label for="placa">Placa:</label>
+            <input type="text" name="placa" id="inPlaca" />
+            <label for="posicao">Posição:</label>
+            <select name="posicao" id="inPosicao"></select>
+          </div>
+          <button class="form cadastrar" type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </section>
+    <section class="estacionados">
+      <div class="carros">
+        <div class="carros-title">
+          <h3>Vagas</h3>
+        </div>
+        <div class="carros-estacionados"></div>
+      </div>
+    </section>
+    <footer>
+      <p>Desenvolvido por João Henrique</p>
+      <p>₢ 2025, Estacionamento do João</p>
+    </footer>
+  </body>
+</html>
